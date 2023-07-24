@@ -16,3 +16,26 @@ export default {
     }
 }
 </script>
+
+<style>
+@import '../src/assets/main.css';
+
+.content {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 375px;
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-wrap: nowrap;
+        max-width: 800px;
+        margin: auto;
+        align-items: center;
+        box-shadow: 0 4px 20px 4px hsla(241, 72%, 46%, 0.2);
+        border-radius: 35px;
+    }
+}
+</style>
