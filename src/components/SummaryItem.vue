@@ -1,20 +1,24 @@
 <template>
     <div class="section summary-container">
         <h1 class="summary-title">Summary</h1>
-        <summary-box-item title="Reaction" score="80" icon="fa-bolt" />
-        <summary-box-item title="Memory" score="92" icon="fa-brain" />
-        <summary-box-item title="Verbal" score="61" icon="fa-comment-dots" />
-        <summary-box-item title="Visual" score="72" icon="fa-eye" />
+        <summary-box-item v-for="(record, index) in summaryData" :key="index" :title="record.category" :score="record.score"
+            :icon="record.icon" />
         <button class="summary-button">Continue</button>
     </div>
 </template>
 
 <script>
 import SummaryBoxItem from './SummaryBoxItem.vue';
+import JsonData from '../data.json';
 
 export default {
     components: {
         SummaryBoxItem
+    },
+    data() {
+        return {
+            summaryData: JsonData
+        }
     }
 }
 </script>
